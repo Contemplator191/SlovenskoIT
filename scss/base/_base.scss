@@ -1,0 +1,66 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+    @include respond(tab-land) { // width < 1200
+        font-size: 56.25%; //1 rem = 9px, 9/16 = 56.25%
+    }
+    @include respond(tab-port) { // width < 900
+        font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    }
+    @include respond(phone) { // width < 600
+        font-size: 43.75%; //1 rem = 7px, 7/16 = 43.75%
+    }
+    @include respond(tiny) { // width < 480
+        font-size: 37.5%; //1 rem = 6px, 6/16 = 37.5%
+    }
+}
+body {
+    box-sizing: border-box;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
+}
+::selection {
+    background-color: $c-secondary;
+    color: $c-yang;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em;   // 1200px
+$bp-large: 62.5em;   // 1000px
+$bp-medium: 50em;    // 800px;
+$bp-small: 37.5em;    // 600px;
+
+.main-container {
+    @include container(119rem);
+    padding-top: 2rem;
+
+    @media only screen and (max-width: 80em) {
+        padding: 3rem 2rem;
+    }
+    @include respond (tiny) {
+        padding: 4rem 6rem;
+    }
+}
+.header-container {
+    @include container(119rem);
+    padding-top: 2rem;
+
+    @include respond (phone) {
+        max-width: 100%;
+    }
+}

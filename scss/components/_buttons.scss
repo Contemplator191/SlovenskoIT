@@ -1,0 +1,102 @@
+/*
+*
+* BUTTONS 
+* 
+*/
+
+//BUTTON TYPE 1
+.btn {
+    &,
+    &:link,
+    &:visited {
+        font-size: 1.5rem;
+        padding: 1rem 4.5rem;
+        border-radius: .4rem;
+        display: inline-block;
+        position: relative;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        @include transition(all .2s ease);
+    }
+    &:hover {
+        @include transform(translateY(-3px));
+        box-shadow: 0 1rem 2rem rgba($c-yin, .2);
+
+        &::after {
+            @include transform(scaleX(1.4) scaleY(1.6));
+            opacity: 0;
+        }
+    }
+    &:active,
+    &:focus {
+        outline: none;
+        @include transform(translateY(-1px));
+        box-shadow: 0 .5rem 1rem rgba($c-yin, .2);
+    }
+    &--teal {
+        background-color: $c-yin;
+        color: $c-yang;
+
+        &::after {
+            background-color: $c-secondary;
+        }
+    }
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: .4rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        @include transition(all .4s ease);
+    }
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+}
+//BUTTON LINK TYPE
+// .btn-link {
+//     position: relative;
+//     font-size: 1.5rem;
+//     font-weight: 700;
+//     margin: 2rem 3rem;
+//     padding: .25rem 0 0 0;
+//     text-transform: uppercase;
+//     text-decoration: none;
+//     color: $c-gray-light;
+
+//     @include respond(phone) {
+//         display: inline-block;
+//     }
+//     &::after {
+//         position: absolute;
+//         bottom: 0;
+//         left: 0;
+//         right: 0;
+//         margin: auto;
+//         width: 100%;
+//         content: '.';
+//         color: #fff0;
+//         background: $c-yang;
+//         height: 1px;
+//         @include transition(all .2s ease);
+//         animation: moveInRight 1s ease-out;
+//     }
+//     &:hover {
+//         color: $c-secondary;
+//         text-shadow: .2rem .2rem .3rem $c-yin;
+//         @include transition(all 1.2s ease);
+
+//         &::after {
+//             visibility: hidden;
+//             @include transition(visibility .2s ease);
+//         }
+//     }
+// }

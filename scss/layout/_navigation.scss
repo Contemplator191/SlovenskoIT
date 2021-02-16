@@ -1,0 +1,285 @@
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+}
+.navbar-collapse {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.navbar-expand-lg .navbar-collapse {
+	align-self: flex-end;
+	background: transparent;
+
+	@media screen and (min-width: 992px) {
+		display: -ms-flexbox !important;
+		display: flex !important;
+		-ms-flex-preferred-size: auto;
+		flex-basis: auto;
+	}
+}
+.collapse {
+  &:not(.show) {
+    display: none;
+  }
+}
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  @include transition(height .35s ease);
+}
+.navbar-expand-lg {
+	@media screen and (min-width: 992px) {
+		-ms-flex-flow: row nowrap;
+		flex-flow: row nowrap;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+	}
+	.navbar-nav {
+		-ms-flex-direction: row;
+		flex-direction: row;
+	}
+}
+/*----------multi-level-accordian-menu------------*/
+.navbar-logo {
+	padding: 15px;
+	color: $c-yang;
+}
+.navbar-mainbg {
+	height: auto;
+	padding: 0;
+	background: $c-yang;
+}
+.sticky-top {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 1020;
+}
+#navbarSupportedContent {
+	overflow: hidden;
+	position: relative;
+
+	.navbar-nav {
+	    display: -ms-flexbox;
+	    display: flex;
+	    // -ms-flex-direction: column;
+	    // flex-direction: column;
+	    padding-left: 0;
+	    margin-bottom: 0;
+	    list-style: none;
+	}
+
+	ul {
+		padding: 0;
+		margin-right: 10rem;
+
+		@include respond(phone) {
+			margin-right: 0;
+		}
+	}
+	li {
+		float: left;
+		list-style-type: none;
+	}
+	ul li a {
+		font-size: 1.5rem;
+		padding: 2rem 2rem;
+		display: block;
+		position: relative;
+		color: $c-primary;
+		font-weight: 600;
+		text-decoration: none;
+		transition-duration: .6s;
+		transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+	>ul>li.active>a {
+		color: $c-yang;
+		font-weight: 800;
+		background-color: transparent;
+		@include transition(all .7s)
+	}
+	a:not(:only-child):after {
+		@include pseudo($display: inline-block, $content: "\f105");
+		right: 20px;
+		top: 10px;
+		font-size: 14px;
+		display: inline-block;
+		padding-right: 3px;
+		vertical-align: middle;
+		font-weight: 900;
+		@include transition(.5s)
+	}
+	.active>a:not(:only-child):after {
+		@include transform(rotate(90deg));
+	}
+}
+.active-selector {
+	display:inline-block;
+	position:absolute;
+	height: 100%;
+	top: 0;
+	left: 0;
+	transition-duration: .6s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	background-color: $c-primary;
+	margin-top: 1rem;
+}
+@include respond(phone) {
+	.navbar {
+		justify-content: flex-end;
+	}
+}
+.navbar-toggler {
+	outline: none !important;
+	font-size: 4.25rem;
+	margin: 3rem;
+}
+#hamburger-svg {
+	display: none;
+}
+.toggle {
+	display: block;
+	cursor: pointer;
+	input {
+		display: none;
+		+ {
+			div {
+				width: 20px;
+				height: 14px;
+				position: relative;
+				div {
+					position: absolute;
+					left: 0;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					@include transition(transform .5s ease);
+					span {
+						display: block;
+						position: absolute;
+						left: 0;
+						right: 0;
+						&:first-child {
+							top: 0;
+							&:before {
+								top: 0;
+							}
+							&:after {
+								top: 0;
+							}
+						}
+						&:last-child {
+							bottom: 0;
+							&:before {
+								bottom: 0;
+							}
+							&:after {
+								bottom: 0;
+							}
+						}
+						&:before {
+							@include pseudo;
+							width: 47%;
+							height: 2px;
+							border-radius: 1px;
+							background: $c-yang;
+							@include prefix((
+								backface-visibility: hidden
+							), webkit);
+							@include transition(transform .5s ease, border-radius .3s ease);
+							left: 0;
+							transform-origin: 0 50%;
+							@include transform(translate(1px, 0) scaleX(1.1));
+						}
+						&:after {
+							@include pseudo;
+							width: 47%;
+							height: 2px;
+							border-radius: 1px;
+							background: $c-yang;
+							@include prefix((
+								backface-visibility: hidden
+							), webkit);
+							@include transition(transform .5s ease, border-radius .3s ease);
+							right: 0;
+							transform-origin: 100% 50%;
+							@include transform(translate(-1px, 0) scaleX(1.1));
+						}
+					}
+				}
+				svg {
+					display: block;
+					fill: none;
+					stroke: $c-yang;
+					stroke-width: 2px;
+					width: 44px;
+					height: 44px;
+					stroke-linecap: round;
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					margin: -22px 0 0 -22px;
+					stroke-dasharray: 0 82.801 8 82.801;
+					stroke-dashoffset: 82.801;
+					transform-origin: 50% 50%;
+					@include prefix((
+						backface-visibility: hidden
+					), webkit);
+					@include transform(scale(1));
+					@include transition(stroke-dashoffset .5s ease, stroke-dasharray .6s ease, transform .5s ease);
+					&:nth-child(3) {
+						@include transform(rotate(180deg) scale(1));
+					}
+				}
+			}
+		}
+		&:checked {
+			+ {
+				div {
+					div {
+						@include transform(rotate(90deg));
+						span {
+							&:first-child {
+								&:before {
+									@include transform(rotate(45deg) translate(2.2px, -3px) scaleX(1.05));
+								}
+								&:after {
+									@include transform(rotate(-45deg) translate(-2.2px, -3px) scaleX(1.05));
+								}
+							}
+							&:last-child {
+								&:before {
+									@include transform(rotate(-45deg) translate(2.2px, 3px) scaleX(1.05));
+								}
+								&:after {
+									@include transform(rotate(45deg) translate(-2.2px, 3px) scaleX(1.05));
+								}
+							}
+						}
+					}
+					svg {
+						stroke-dashoffset: 62;
+						stroke-dasharray: 0 82.801 62 82.801;
+						@include transform(rotate(90deg));
+						&:nth-child(3) {
+							@include transform(rotate(270deg));
+						}
+					}
+				}
+			}
+		}
+	}
+}

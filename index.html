@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="SlovenskoIT | Komplexné IT riešenia">
+	<meta name="description" content="Informácie o stránke Slovensko IT, a.s.">
+	<meta name="author" content="Marek Cmarko">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@SlovenskoIT" />
+	<meta name="twitter:title" content="SlovenskoIT">
+	<meta name="twitter:description" content="Informácie o stránke Slovensko IT, a.s.">
+	<meta name="twitter:image" content="{{imageUrl}}">
+
+	<meta property="og:title" content="SlovenskoIT">
+	<meta property="og:description" content="Informácie o stránke Slovensko IT, a.s.">
+	<meta property="og:image" content="{{imageUrl}}">
+	<meta property="og:site_name" content="SlovenskoIT">
+	<meta property="og:url" content="https://www.mirri.gov.sk/ministerstvo/slovensko-it-a-s/">
+
+	<title>SlovenskoIT</title>
+	<!-- FONTS -->
+	<noscript id="css-link-1">
+		<link rel="stylesheet" type="text/css"
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=latin-ext" media="all">
+	</noscript>
+	<noscript id="css-link-2">
+		<link rel="stylesheet" type="text/css"
+			href="https://fonts.googleapis.com/css?family=Merienda:400,700,800&amp;subset=latin-ext" media="all">
+	</noscript>
+	<!-- LINKS-->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- SCRIPTS -->
+	<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script defer src="js/script.js"></script>
+
+
+	<script>
+		var dfr = function () {
+			var n1 = document.getElementById("css-link-1"),
+				r1 = document.createElement("div"),
+				n2 = document.getElementById("css-link-2"),
+				r2 = document.createElement("div");
+
+			r1.innerHTML = n1.textContent;
+			document.body.appendChild(r1);
+			n1.parentElement.removeChild(n1);
+
+			r2.innerHTML = n2.textContent;
+			document.body.appendChild(r2);
+			n2.parentElement.removeChild(n2);
+		};
+		var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+			window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+		if (raf)
+			raf(function () {
+				window.setTimeout(dfr, 0);
+			});
+		else
+			window.addEventListener("load", dfr);
+	</script>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	 <!--[if lt IE 9]>
+	   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div id="panel">
+		<header class="header">
+			<div class="header-container">
+				<div class="upper-nav">
+					<a class="navbar-brand navbar-logo _tc" href="#">
+						<picture class="footer__logo">
+						    <source srcset="img/logo-header-1x.png 1x, img/logo-header-2x.png 2x"
+						            media="(max-width: 37.5em)">
+						    <img srcset="img/logo-header-1x.png 1x, img/logo-header-2x.png 2x" alt="Full logo" src="img/logo-header-2x.png">
+						</picture>
+					</a>
+					<div class="language-picker language-picker--flags js-language-picker" data-trigger-class="btn btn--subtle js-tab-focus">
+					  <form action="" class="language-picker__form">
+					    <label for="language-picker-select">Vyberte jazyk</label>
+
+					    <select name="language-picker-select" id="language-picker-select">
+					      <option lang="de" value="deutsch">Deutsch</option>
+					      <option lang="sk" value="english" selected>english</option>
+					      <option lang="fr" value="francais">Français</option>
+					      <option lang="it" value="italiano">Italiano</option>
+					    </select>
+					  </form>
+					</div>
+				</div>
+				<nav class="navbar navbar-expand-lg navbar-mainbg sticky-top d-print">
+					<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<label class="toggle">
+							<input type="checkbox">
+							<div>
+								<div>
+									<span></span>
+									<span></span>
+								</div>
+								<svg>
+									<use xlink:href="#path">
+								</svg>
+								<svg>
+									<use xlink:href="#path">
+								</svg>
+							</div>
+						</label>
+						<svg xmlns="http://www.w3.org/2000/svg" id="hamburger-svg">
+							<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="path">
+								<path d="M22,22 L2,22 C2,11 11,2 22,2 C33,2 42,11 42,22"></path>
+							</symbol>
+						</svg>
+					</button>
+
+					<div class="navbar-collapse collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto">
+							<div class="active-selector">
+								<div class="left"></div>
+								<div class="right"></div>
+							</div>
+							<li class="nav-item active">
+								<a class="nav-link" href="#home">Ministerstvo</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#education">Sekcie</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#abilities">Programy EŠIF</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#about">Aktuality</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#contact">Kontakt</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<!-- Main content -->
+		<main>
+			<div class="main-container">
+				<article class="desc">
+					<h1 class="heading-primary _tc">Lorem impsum</h1>
+
+					<blockquote class="desc__quote _tc">
+					  <p><q><em>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</em></q></p>
+					  <p><q>There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...</q></p>
+					</blockquote>
+					<div class="shadow-sep">
+						<div class="shadow-sep-hr sep-shadow"></div>
+					</div>
+					<p class="desc__p _mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum diam ut neque consequat volutpat at non quam. Pellentesque at sem quis felis bibendum aliquam sed eget dui. Vivamus bibendum vehicula sagittis. Aliquam erat volutpat. Morbi vel erat malesuada lacus elementum efficitur. In ut euismod nisl. Vestibulum ac aliquam libero, sit amet accumsan quam.</p>
+					<p class="desc__p _mb-1">Proin eget felis sit amet erat dapibus semper. Fusce mauris erat, molestie eu nibh vel, scelerisque sagittis eros. Nam fringilla turpis lacus. Aenean non dui sit amet sapien mollis tincidunt. Morbi maximus congue metus ut aliquet. Aenean eget semper augue. Duis felis libero, faucibus a libero eu, laoreet sodales ligula. Cras lectus purus, viverra vel quam nec, ornare laoreet dolor. In feugiat congue malesuada.</p>
+					<p class="desc__p _mb-1">In rhoncus ipsum metus, quis scelerisque magna aliquam id. Maecenas ultrices nisi vel metus aliquam placerat. Suspendisse a tellus ex. Praesent suscipit varius quam, vel iaculis dui tempus in. Nunc purus metus, tristique at hendrerit vel, sollicitudin nec nisi. Cras facilisis nec felis in condimentum. Suspendisse nec quam id lacus tincidunt scelerisque. Morbi maximus, orci sed finibus dapibus, elit odio rutrum odio, sed vehicula elit risus tempus lectus. Donec eget erat a ante tristique fringilla ac ut odio. Nam non felis risus. Aliquam nec purus interdum, viverra urna vitae, pulvinar turpis. Suspendisse pharetra aliquet dignissim.</p>
+					<p class="desc__p _mb-1">Integer accumsan, metus et fermentum malesuada, risus sapien euismod lorem, id rhoncus sem nulla at dui. Nunc nisl sem, convallis ut neque ac, viverra mattis ex. Nulla sed dui eget lorem condimentum pretium. Morbi eu blandit est. Sed iaculis elit porttitor ex pharetra, eget maximus mauris cursus. Integer sapien arcu, euismod vitae consectetur luctus, consectetur semper ligula. Nullam maximus blandit rutrum. Cras semper lorem sed orci dictum, vitae porta erat condimentum.</p>
+					<p class="desc__p _mb-1">Fusce mattis feugiat imperdiet. Nunc vitae ligula sit amet mauris malesuada aliquet. Donec nec dolor pretium, sollicitudin ipsum a, tincidunt sem. Integer pulvinar, purus non tempus iaculis, mauris lectus eleifend purus, sed vehicula risus magna eget ipsum. Suspendisse interdum tristique orci eu congue. Pellentesque at eleifend velit. Aliquam urna mauris, dictum eu tellus in, ornare eleifend massa. Curabitur scelerisque sit amet sapien quis euismod. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+				</article>
+			</div>
+		</main>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="main-container">
+				<div class="footer__cols">
+					 <div class="footer__text-box">
+							<p class="footer__p">Vytvorené v súlade s <a href="#">Jednotným dizajn manuálom elektronických služieb</a></p>
+					 		<ul class="footer__menu">
+					 			<li><a href="#">Pomoc</a></li>
+					 			<li><a href="#">Cookies</a></li>
+					 			<li><a href="#">Kontakty</a></li>
+					 			<li><a href="#">Mapa stránky</a></li>
+					 			<li><a href="#">RSS</a></li>
+					 			<li><a href="#">Vyhlásenie o prístupnosti</a></li>
+					 		</ul>
+					 </div>
+					 <div class="footer__logo-box">
+					 	<picture class="footer__logo">
+					 	    <source srcset="img/logo-header-1x.png 1x, img/logo-header-2x.png 2x"
+					 	            media="(max-width: 37.5em)">
+					 	    <img srcset="img/logo-header-1x.png 1x, img/logo-header-2x.png 2x" alt="Full logo" src="img/logo-header-2x.png">
+					 	</picture>
+					 </div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+</body>
+</html>
